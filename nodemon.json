@@ -1,0 +1,3 @@
+{
+    "ignore" : ["documentation/swagger_output.json"]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "chat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "serve": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "dev": "nodemon documentation/swagger.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.10.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.15",
+    "multer": "^1.4.2",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-jwt.socketio": "^0.1.1",
+    "socket.io": "^3.1.2",
+    "socketio-jwt": "^4.6.2"
+  },
+  "devDependencies": {
+    "chalk": "^4.1.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.7",
+    "swagger-autogen": "^2.7.1",
+    "swagger-ui-express": "^4.1.6"
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "REST API",
+    "description": ""
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "tags": [],
+  "schemes": [
+    "http"
+  ],
+  "securityDefinitions": {
+    "apiKeyAuth": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "Authorization",
+      "description": "any description..."
+    }
+  },
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/user/account/{username}": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "description": "",
+        "produces": [],
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/user/image/{id}": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "description": "",
+        "produces": [],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/user/account": {
+      "post": {
+        "tags": [
+          "Account"
+        ],
+        "description": "",
+        "produces": [],
+        "parameters": [],
+        "responses": {}
+      },
+      "put": {
+        "tags": [
+          "Account"
+        ],
+        "description": "",
+        "produces": [],
+        "parameters": [],
+        "responses": {}
+      },
+      "delete": {
+        "tags": [
+          "Account"
+        ],
+        "description": "",
+        "produces": [],
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/user/login": {
+      "post": {
+        "tags": [
+          "Account"
+        ],
+        "description": "",
+        "produces": [],
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/user/chat": {
+      "get": {
+        "tags": [
+          "Chats"
+        ],
+        "description": "",
+        "produces": [],
+        "parameters": [],
+        "responses": {},
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Chats"
+        ],
+        "description": "",
+        "produces": [],
+        "parameters": [
+          {
+            "name": "room",
+            "in": "body",
+            "type": "object",
+            "description": "Room data",
+            "schema": {
+              "$ref": "#/definitions/addRoom"
+            }
+          }
+        ],
+        "responses": {},
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/user/chat/{roomID}/messages": {
+      "get": {
+        "tags": [
+          "Chats"
+        ],
+        "description": "",
+        "produces": [],
+        "parameters": [
+          {
+            "name": "roomID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/user/chat-add-member": {
+      "post": {
+        "tags": [
+          "Chats"
+        ],
+        "description": "",
+        "produces": [],
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "user": {
+                  "type": "string",
+                  "example": "any"
+                },
+                "room": {
+                  "type": "string",
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    }
+  },
+  "definitions": {
+    "addRoom": {
+      "type": "object",
+      "properties": {
+        "room": {
+          "type": "object",
+          "properties": {
+            "participants": {
+              "type": "array",
+              "example": [
+                "<userID>",
+                "<userID>"
+              ],
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
